@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ESC-50 Browser Benchmark v2 (WebGPU vs WASM)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 820px; margin: 40px auto; padding: 0 16px; }
+    button { padding: 10px 18px; font-size: 15px; cursor: pointer; margin-right: 8px; }
+    pre { background: #111; color: #0f0; padding: 16px; border-radius: 8px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h2>ESC-50 In-Browser Benchmark v2 (q8: WASM vs WebGPU)</h2>
+  <p>Select <strong>5 to 10</strong> <code>.wav</code> files from your <code>audio</code> folder:</p>
+  <input type="file" id="fileInput" multiple accept=".wav" />
+  <br /><br />
+  <button id="wasmBtn">1. Run WASM</button>
+  <button id="webgpuBtn">2. Run WebGPU</button>
+  <pre id="log">Waiting for files...</pre>
+
+  <script type="module">
+    import { pipeline } from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.4.0';
+
+    const logEl = document.getElementById('log');
+    const log = (msg) => { logEl.textContent += '\n' + msg; };
+    const tick = () => new Promise((r) => setTimeout(r, 50));
+
+    function percentile(sorted, p) {
+      const idx = Math.ceil((p / 100) * sorted.length) - 1;
+      return sorted[Math.max(0, idx)];
+    }
+
+    async function decodeWav16kHz(file) {
+      const arrayBuf = await file.arrayBuffer();
+      const ctx = new AudioContext();
+      const decoded = await ctx.decodeAudioData(arrayBuf);
+      const offline = new OfflineAudioContext(1, Math.ceil(decoded.duration * 16000), 16000);
+      const src = offline.createBufferSource();
+      src.buffer = decoded;
+      src.connect(offline.destination);
+      src.start();
+      const rendered = await offline.startRendering();
+      await ctx.close();
+      return rendered.getChannelData(0);
+    }
+
+    async function getAudioArrays() {
+      const files = Array.from(document.getElementById('fileInput').files);
+      if (!files.length) { alert('Please select 5–10 .wav files first!'); return null; }
+      logEl.textContent = `Decoding ${files.length} audio files to 16kHz...`;
+      await tick();
+      const arr = [];
+      for (const f of files) arr.push(await decodeWav16kHz(f));
+      return arr;
+    }
+
+    async function runDevice(device) {
+      const audioArrays = await getAudioArrays();
+      if (!audioArrays) return;
+      if (device === 'webgpu' && !navigator.gpu) {
+        log('\nWebGPU not supported in this browser.');
+        return;
+      }
+
+      log(`\n=== Testing Browser (${device}, q8) ===`);
+      await tick();
+      const tLoad0 = performance.now();
+      const clf = await pipeline(
+        'audio-classification',
+        'Xenova/ast-finetuned-audioset-10-10-0.4593',
+        { dtype: 'q8', device }
+      );
+      const loadMs = performance.now() - tLoad0;
+      log(`Model loaded in ${loadMs.toFixed(2)} ms. Running warm-up...`);
+      await tick();
+
+      await clf(audioArrays[0], { topk: 1 });
+
+      const latencies = [];
+      for (let i = 0; i < audioArrays.length; i++) {
+        const t0 = performance.now();
+        await clf(audioArrays[i], { topk: 1 });
+        const ms = performance.now() - t0;
+        latencies.push(ms);
+        log(`Clip ${i + 1}/${audioArrays.length}: ${ms.toFixed(2)} ms`);
+        await tick();
+      }
+
+      const sorted = [...latencies].sort((a, b) => a - b);
+      const avg = latencies.reduce((a, b) => a + b, 0) / latencies.length;
+      log(`\n[${device}] Cold-Start: ${loadMs.toFixed(2)} ms | Avg: ${avg.toFixed(2)} ms | p50: ${percentile(sorted, 50).toFixed(2)} ms | p95: ${percentile(sorted, 95).toFixed(2)} ms`);
+    }
+
+    document.getElementById('wasmBtn').onclick = () => runDevice('wasm');
+    document.getElementById('webgpuBtn').onclick = () => runDevice('webgpu');
+  </script>
+</body>
+</html>

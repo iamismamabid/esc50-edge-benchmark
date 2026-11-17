@@ -1,0 +1,101 @@
+env,dtype,file,esc50_target,top_label,confidence,latency_ms
+local_node,fp32,1-100032-A-0.wav,0,"Bark",0.1823,2575.85
+local_node,fp32,1-100038-A-14.wav,14,"Bird",0.2578,4251.46
+local_node,fp32,1-100210-A-36.wav,36,"Vacuum cleaner",0.3150,3328.07
+local_node,fp32,1-101296-A-19.wav,19,"Thunder",0.5493,4117.86
+local_node,fp32,1-101336-A-30.wav,30,"Knock",0.9877,2539.64
+local_node,fp32,1-101404-A-34.wav,34,"Finger snapping",0.2337,2837.52
+local_node,fp32,1-103298-A-9.wav,9,"Crow",0.6176,3161.04
+local_node,fp32,1-104089-A-22.wav,22,"Clapping",0.7950,2513.63
+local_node,fp32,1-115545-A-48.wav,48,"Explosion",0.1773,2440.80
+local_node,fp32,1-116765-A-41.wav,41,"Vehicle",0.2471,3208.61
+local_node,fp32,1-11687-A-47.wav,47,"Aircraft",0.3681,3468.03
+local_node,fp32,1-118206-A-31.wav,31,"Clicking",0.1802,4972.68
+local_node,fp32,1-118559-A-17.wav,17,"Water",0.2448,5504.50
+local_node,fp32,1-119125-A-45.wav,45,"Train",0.4604,4191.20
+local_node,fp32,1-121951-A-8.wav,8,"Sheep",0.5218,4338.32
+local_node,fp32,1-12653-A-15.wav,15,"Drip",0.2822,3719.14
+local_node,fp32,1-13571-A-46.wav,46,"Church bell",0.7109,4322.56
+local_node,fp32,1-13613-A-37.wav,37,"Engine",0.2368,3874.17
+local_node,fp32,1-137-A-32.wav,32,"Computer keyboard",0.5260,3943.41
+local_node,fp32,1-137296-A-16.wav,16,"Vehicle",0.2397,5207.39
+local_node,fp32,1-155858-A-25.wav,25,"Walk, footsteps",0.4896,2740.77
+local_node,fp32,1-15689-A-4.wav,4,"Frog",0.9218,2679.07
+local_node,fp32,1-16568-A-3.wav,3,"Moo",0.3515,2889.88
+local_node,fp32,1-17092-A-27.wav,27,"Toothbrush",0.9698,2643.53
+local_node,fp32,1-17124-A-43.wav,43,"Vehicle horn, car horn, honking",0.4714,2551.70
+local_node,fp32,1-17150-A-12.wav,12,"Crackle",0.0981,2533.32
+local_node,fp32,1-172649-A-40.wav,40,"Vehicle",0.2066,2571.40
+local_node,fp32,1-17295-A-29.wav,29,"Stomach rumble",0.7384,2417.18
+local_node,fp32,1-17367-A-10.wav,10,"Rain",0.4032,2406.61
+local_node,fp32,1-17585-A-7.wav,7,"Insect",0.4098,2487.32
+local_node,fp32,1-1791-A-26.wav,26,"Snicker",0.4032,2469.00
+local_node,fp32,1-18074-A-6.wav,6,"Chicken, rooster",0.6072,2818.26
+local_node,fp32,1-18527-A-44.wav,44,"Vehicle",0.3490,2516.79
+local_node,fp32,1-18631-A-23.wav,23,"Snort",0.6468,2632.57
+local_node,fp32,1-187207-A-20.wav,20,"Baby cry, infant cry",0.4429,2494.77
+local_node,fp32,1-18810-A-49.wav,49,"Wood",0.3909,3276.01
+local_node,fp32,1-19111-A-24.wav,24,"Throat clearing",0.8030,4496.07
+local_node,fp32,1-20133-A-39.wav,39,"Breaking",0.8243,3799.31
+local_node,fp32,1-20545-A-28.wav,28,"Snoring",0.3576,4452.00
+local_node,fp32,1-20736-A-18.wav,18,"Toilet flush",0.9357,3843.84
+local_node,fp32,1-208757-A-2.wav,2,"Oink",0.6252,4434.67
+local_node,fp32,1-21896-A-35.wav,35,"Vehicle",0.1652,3174.21
+local_node,fp32,1-21934-A-38.wav,38,"Tick",0.4691,2990.67
+local_node,fp32,1-26143-A-21.wav,21,"Throat clearing",0.8385,3914.13
+local_node,fp32,1-26806-A-1.wav,1,"Crowing, cock-a-doodle-doo",0.4116,3184.46
+local_node,fp32,1-28135-A-11.wav,11,"Waves, surf",0.3964,3860.75
+local_node,fp32,1-31482-A-42.wav,42,"Siren",0.5354,2922.10
+local_node,fp32,1-34094-A-5.wav,5,"Cat",0.2856,4652.56
+local_node,fp32,1-51805-A-33.wav,33,"Door",0.3233,3971.82
+local_node,fp32,1-57316-A-13.wav,13,"Rattle",0.3711,3747.92
+local_node,q8,1-100032-A-0.wav,0,"Bark",0.1931,3010.07
+local_node,q8,1-100038-A-14.wav,14,"Bird",0.2523,2970.96
+local_node,q8,1-100210-A-36.wav,36,"Vacuum cleaner",0.3185,2986.54
+local_node,q8,1-101296-A-19.wav,19,"Thunder",0.5555,4435.38
+local_node,q8,1-101336-A-30.wav,30,"Knock",0.9881,3400.74
+local_node,q8,1-101404-A-34.wav,34,"Finger snapping",0.2108,3019.73
+local_node,q8,1-103298-A-9.wav,9,"Crow",0.6123,3580.55
+local_node,q8,1-104089-A-22.wav,22,"Clapping",0.7858,3644.46
+local_node,q8,1-115545-A-48.wav,48,"Explosion",0.1594,3689.02
+local_node,q8,1-116765-A-41.wav,41,"Vehicle",0.2697,3567.36
+local_node,q8,1-11687-A-47.wav,47,"Aircraft",0.3447,3290.61
+local_node,q8,1-118206-A-31.wav,31,"Clicking",0.2663,4129.54
+local_node,q8,1-118559-A-17.wav,17,"Water",0.2437,3200.29
+local_node,q8,1-119125-A-45.wav,45,"Train",0.4695,2967.99
+local_node,q8,1-121951-A-8.wav,8,"Sheep",0.5251,4193.49
+local_node,q8,1-12653-A-15.wav,15,"Drip",0.2880,5886.48
+local_node,q8,1-13571-A-46.wav,46,"Church bell",0.6999,3047.98
+local_node,q8,1-13613-A-37.wav,37,"Engine",0.2362,5573.12
+local_node,q8,1-137-A-32.wav,32,"Computer keyboard",0.5316,3329.42
+local_node,q8,1-137296-A-16.wav,16,"Vehicle",0.2164,3335.62
+local_node,q8,1-155858-A-25.wav,25,"Walk, footsteps",0.5070,3087.07
+local_node,q8,1-15689-A-4.wav,4,"Frog",0.9216,3177.48
+local_node,q8,1-16568-A-3.wav,3,"Moo",0.3530,4023.64
+local_node,q8,1-17092-A-27.wav,27,"Toothbrush",0.9790,4028.47
+local_node,q8,1-17124-A-43.wav,43,"Vehicle horn, car horn, honking",0.4687,3270.70
+local_node,q8,1-17150-A-12.wav,12,"Crackle",0.0948,2752.75
+local_node,q8,1-172649-A-40.wav,40,"Vehicle",0.2125,3052.37
+local_node,q8,1-17295-A-29.wav,29,"Stomach rumble",0.8245,3007.54
+local_node,q8,1-17367-A-10.wav,10,"Rain",0.4228,2969.59
+local_node,q8,1-17585-A-7.wav,7,"Insect",0.4062,3175.09
+local_node,q8,1-1791-A-26.wav,26,"Snicker",0.4097,2024.43
+local_node,q8,1-18074-A-6.wav,6,"Chicken, rooster",0.6125,2349.90
+local_node,q8,1-18527-A-44.wav,44,"Vehicle",0.3572,2636.51
+local_node,q8,1-18631-A-23.wav,23,"Snort",0.6689,2882.17
+local_node,q8,1-187207-A-20.wav,20,"Baby cry, infant cry",0.3697,3009.87
+local_node,q8,1-18810-A-49.wav,49,"Wood",0.3397,3051.60
+local_node,q8,1-19111-A-24.wav,24,"Throat clearing",0.8234,3915.03
+local_node,q8,1-20133-A-39.wav,39,"Breaking",0.8062,3285.13
+local_node,q8,1-20545-A-28.wav,28,"Snoring",0.4170,3291.32
+local_node,q8,1-20736-A-18.wav,18,"Toilet flush",0.9217,3195.45
+local_node,q8,1-208757-A-2.wav,2,"Oink",0.5904,3438.71
+local_node,q8,1-21896-A-35.wav,35,"Vehicle",0.1791,3351.25
+local_node,q8,1-21934-A-38.wav,38,"Tick",0.4649,2979.07
+local_node,q8,1-26143-A-21.wav,21,"Throat clearing",0.8170,3398.62
+local_node,q8,1-26806-A-1.wav,1,"Crowing, cock-a-doodle-doo",0.4323,3206.82
+local_node,q8,1-28135-A-11.wav,11,"Waves, surf",0.3908,2954.58
+local_node,q8,1-31482-A-42.wav,42,"Siren",0.5254,2929.71
+local_node,q8,1-34094-A-5.wav,5,"Cat",0.3080,3021.90
+local_node,q8,1-51805-A-33.wav,33,"Door",0.3278,2939.69
+local_node,q8,1-57316-A-13.wav,13,"Rattle",0.3379,3006.02
